@@ -1,0 +1,385 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Yuliya Nikishina — data analyst specializing in marketing analytics, customer insights, experimentation, forecasting and business intelligence.">
+  <meta name="theme-color" content="#101c31">
+  <title>Yuliya Nikishina — Data Analyst & Marketing Analytics</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --navy: #101c31;
+      --navy-soft: #23314a;
+      --blue: #4b5deb;
+      --blue-dark: #3545cd;
+      --lime: #d5fa78;
+      --paper: #f8f9f7;
+      --white: #fff;
+      --ink: #111b2c;
+      --muted: #586478;
+      --line: #e4e8ee;
+      --chip: #edf1fb;
+      --radius: 22px;
+      --font: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+    }
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: 95px; }
+    body { margin: 0; background: var(--paper); color: var(--ink); font: 16px/1.65 var(--font); -webkit-font-smoothing: antialiased; }
+    a { color: inherit; }
+    a:focus-visible, button:focus-visible { outline: 3px solid var(--blue); outline-offset: 4px; }
+    ::selection { background: var(--lime); color: var(--navy); }
+    .skip-link { position: absolute; z-index: 100; top: -80px; left: 20px; padding: 10px 14px; background: white; border-radius: 6px; }
+    .skip-link:focus { top: 12px; }
+    .container { width: min(1180px, calc(100% - 64px)); margin-inline: auto; }
+    .section { padding-block: 112px; }
+    .site-header { position: sticky; z-index: 30; top: 0; background: rgba(248,249,247,.94); border-bottom: 1px solid rgba(16,28,49,.08); backdrop-filter: blur(18px); }
+    .header-inner { min-height: 78px; display: flex; align-items: center; justify-content: space-between; gap: 22px; }
+    .brand { display: flex; align-items: center; gap: 12px; text-decoration: none; white-space: nowrap; }
+    .brand-symbol { display: grid; place-items: center; width: 38px; height: 38px; border-radius: 12px; background: var(--navy); color: var(--lime); font-size: 14px; font-weight: 750; letter-spacing: -.06em; }
+    .brand-text { font-size: 15px; font-weight: 760; letter-spacing: -.035em; }
+    .header-nav { display: flex; align-items: center; gap: clamp(16px, 2.3vw, 32px); }
+    .header-nav a { font-size: 13px; font-weight: 650; text-decoration: none; color: #536075; transition: color .2s ease; }
+    .header-nav a:hover { color: var(--blue); }
+    .header-nav .nav-contact { display: inline-flex; align-items: center; gap: 7px; background: var(--navy); color: white; padding: 10px 16px; border-radius: 100px; }
+    .header-nav .nav-contact:hover { background: var(--blue); color: white; }
+    .arrow { display: inline-block; transition: transform .2s ease; }
+    a:hover .arrow { transform: translate(2px, -2px); }
+
+    .hero { position: relative; padding: 104px 0 104px; overflow: hidden; }
+    .hero::after { content:""; position:absolute; z-index:-1; right:-200px; top:40px; width:580px; height:580px; background:radial-gradient(circle,#e3e8ff 0%,rgba(227,232,255,0) 68%); pointer-events:none; }
+    .hero-grid { display: grid; grid-template-columns: 1.08fr .92fr; align-items: center; gap: clamp(38px, 5vw, 80px); }
+    .eyebrow { display: flex; align-items: center; gap: 10px; margin: 0 0 24px; color: var(--blue-dark); font-size: 11px; font-weight: 820; letter-spacing: .19em; text-transform: uppercase; }
+    .eyebrow::before { content:""; width: 26px; height: 2px; background: currentColor; }
+    h1,h2,h3,p { margin-top: 0; }
+    h1 { max-width: 710px; margin-bottom: 26px; font-size: clamp(49px,5.6vw,79px); line-height: 1.04; font-weight: 800; letter-spacing: -.072em; }
+    h1 em { color: var(--blue); font-style: normal; }
+    .intro { max-width: 580px; margin-bottom: 30px; font-size: 17px; line-height: 1.83; color: var(--muted); }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; }
+    .button { display: inline-flex; justify-content: center; align-items: center; gap: 12px; min-height: 48px; padding: 13px 19px; border: 1px solid transparent; border-radius: 12px; font-size: 13px; font-weight: 760; text-decoration: none; transition: transform .2s ease, background .2s ease, border-color .2s ease; }
+    .button:hover { transform: translateY(-2px); }
+    .button-primary { color: white; background: var(--navy); }
+    .button-primary:hover { background: var(--blue-dark); }
+    .button-outline { border-color: #d3dae5; background: white; color: var(--navy); }
+    .button-outline:hover { border-color: var(--blue); }
+    .hero-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 32px; }
+    .hero-tags span { color:#516078; background:#ecf0f6; border:1px solid #e4e8f0; border-radius: 100px; padding:5px 12px; font-size:12px; font-weight:650; }
+
+    .impact-panel { position: relative; min-height: 470px; padding: 34px; border-radius: 30px; background: var(--navy); color: white; box-shadow: 0 27px 70px rgba(16,28,49,.16); overflow: hidden; }
+    .impact-panel::before { content: ""; position: absolute; width: 330px; height: 330px; top: -180px; right: -95px; border: 1px solid rgba(255,255,255,.10); border-radius: 50%; box-shadow: 0 0 0 62px rgba(255,255,255,.025), 0 0 0 120px rgba(255,255,255,.02); pointer-events: none; }
+    .impact-label { position: relative; margin: 0 0 20px; color: var(--lime); font-size: 11px; font-weight: 850; letter-spacing: .16em; text-transform: uppercase; }
+    .impact-panel h2 { position: relative; max-width: 440px; margin: 0 0 13px; font-size: clamp(28px, 3vw, 37px); line-height: 1.15; font-weight: 800; letter-spacing: -.055em; }
+    .impact-description { position: relative; margin: 0 0 27px; max-width: 410px; font-size: 13px; line-height: 1.75; color: #bdc9dc; }
+    .impact-comparison { position: relative; display: grid; grid-template-columns: 1fr auto 1fr; align-items: stretch; gap: 12px; }
+    .impact-metric { padding: 21px 17px; border: 1px solid #35445c; border-radius: 17px; background: #1d2c45; }
+    .impact-metric.after { border-color: #a4cc64; background: #253a36; }
+    .metric-label { display: block; margin-bottom: 10px; font-size: 11px; color: #bac9de; font-weight: 730; }
+    .impact-metric strong { display: block; font-size: clamp(27px, 3.2vw, 42px); line-height: 1.1; letter-spacing: -.06em; white-space: nowrap; }
+    .impact-metric strong small { font-size: 14px; letter-spacing: 0; }
+    .impact-metric.after strong { color: var(--lime); }
+    .metric-note { display: block; margin-top: 9px; color: #b9c6d8; font-size: 11px; }
+    .impact-arrow { display: grid; place-items: center; font-size: 28px; font-weight: 500; color: var(--lime); }
+    .impact-process { position: relative; display: flex; flex-wrap: wrap; align-items: center; gap: 10px; margin-top: 26px; padding-top: 20px; border-top: 1px solid #38465b; }
+    .impact-process span { padding: 6px 11px; border-radius: 100px; background: #2c3c55; border: 1px solid #45526a; font-size: 11px; font-weight: 650; color: #e8effb; }
+    .impact-process b { font-weight: 700; color: var(--lime); font-size: 13px; }
+    .impact-footer { position: relative; margin: 16px 0 0; color: #9daec7; font-size: 11px; }
+
+        .hero-bottom { display:flex; justify-content:space-between; align-items:center; gap:24px; margin-top:70px; padding-top:25px; border-top:1px solid #e3e7ec; }
+    .hero-bottom p { margin:0; color:#6a7587; font-size:12px; letter-spacing:.015em; }
+    .hero-bottom strong { color:var(--navy); font-size:13px; }
+    .stat-line { display:flex; flex-wrap:wrap; justify-content:flex-end; gap:35px; }
+    .stat-line div { display:flex; gap:9px; align-items:baseline; white-space:nowrap; }
+    .stat-line strong { font-size:25px; line-height:1; font-weight:830; letter-spacing:-.045em; }
+    .stat-line span { color:#6a7587; font-size:11px; font-weight:620; }
+
+    .section-head { display:flex; align-items:end; justify-content:space-between; gap:30px; margin-bottom:37px; }
+    .section h2 { margin:0; max-width:780px; font-size:clamp(35px,4vw,53px); font-weight:800; line-height:1.09; letter-spacing:-.06em; }
+    .section-description { max-width:390px; margin:0; font-size:14px; color:var(--muted); }
+    .section-kicker { margin:0 0 14px; color:var(--blue-dark); font-size:11px; font-weight:800; letter-spacing:.18em; text-transform:uppercase; }
+    .section-kicker.light { color:var(--lime); }
+    .selected { background:white; border-block:1px solid #edf0f3; }
+    .case-grid { display:grid; grid-template-columns: 1.2fr 1fr 1fr; gap:18px; align-items:stretch; }
+    .case { display:flex; flex-direction:column; position:relative; min-height:360px; border:1px solid #e5e9f0; border-radius:var(--radius); background:#f9fafb; padding:30px; transition:transform .22s ease, box-shadow .22s ease; }
+    .case:hover { transform:translateY(-5px); box-shadow:0 17px 40px rgba(25,40,69,.07); }
+    .case.primary { background:var(--navy); color:white; border-color:var(--navy); }
+    .case-area { margin:0 0 11px; color:#788397; font-size:10px; font-weight:800; letter-spacing:.17em; text-transform:uppercase; }
+    .case.primary .case-area { color:#b5c3dd; }
+    .case h3 { margin:0 0 15px; font-size:24px; letter-spacing:-.04em; line-height:1.19; }
+    .case p { margin:0 0 22px; color:#637087; font-size:13.5px; line-height:1.72; }
+    .case.primary p { color:#c4cede; }
+    .case-footer { display:flex; flex-wrap:wrap; align-items:center; gap:7px; margin-top:auto; }
+    .case-footer span { display:inline-block; border-radius:100px; border:1px solid #dae1ed; background:white; padding:5px 9px; color:#46536a; font-size:10px; font-weight:750; }
+    .case.primary .case-footer span { background:#283952; color:#e8effa; border-color:#42516a; }
+    .confidential { margin:17px 0 0; color:#828b98; font-size:11px; }
+
+    .about { padding-block:105px; }
+    .about-grid { display:grid; grid-template-columns:.8fr 1.2fr; gap:clamp(40px,8vw,130px); align-items:start; }
+    .about-large { margin:0; max-width:720px; font-size:clamp(22px,2.65vw,34px); font-weight:670; line-height:1.47; letter-spacing:-.035em; }
+    .about-large strong { color:var(--blue-dark); }
+    .about-detail { margin:23px 0 0; color:var(--muted); font-size:14px; line-height:1.9; }
+    .about-aside { margin-top:28px; padding:18px 20px; border-left:3px solid var(--blue); background:#eff1fa; border-radius:0 12px 12px 0; color:#485875; font-size:13px; }
+
+    .experience { background:#f0f3f8; }
+    .experience-grid { display:grid; grid-template-columns:310px 1fr; gap:clamp(40px,7vw,100px); }
+    .exp-lead { position:sticky; top:122px; align-self:start; }
+    .exp-lead p:last-child { margin-top:20px; color:var(--muted); font-size:14px; }
+    .timeline { border-top:1px solid #d9e0e8; }
+    .role { display:grid; grid-template-columns: 138px 1fr; gap:22px; padding:27px 0 28px; border-bottom:1px solid #d9e0e8; }
+    .role-date { margin:6px 0 0; color:#69778c; font-size:12px; font-weight:650; }
+    .role h3 { margin:0 0 2px; font-size:18px; letter-spacing:-.035em; font-weight:800; }
+    .role-title { margin:0 0 9px; font-size:13px; color:var(--blue-dark); font-weight:730; }
+    .role-description { margin:0; color:#58657a; font-size:13px; line-height:1.74; }
+    .role-context { display:inline-block; margin-top:10px; color:#7c8797; font-size:11px; }
+
+    .skills { background:var(--navy); color:white; }
+    .skills .section-head { margin-bottom:42px; }
+    .skills .section-description { color:#aebbd0; }
+    .skills-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; }
+    .skill-card { padding:30px; border-radius:var(--radius); border:1px solid #36445c; background:#1b2a43; }
+    .skill-card h3 { margin:0 0 22px; font-size:21px; letter-spacing:-.038em; }
+    .skill-tags { display:flex; flex-wrap:wrap; gap:7px; }
+    .skill-tags span { display:inline-block; padding:7px 10px; border-radius:7px; border:1px solid #47546b; color:#e4ebf6; background:#293a55; font-size:11px; font-weight:600; }
+
+    .education { padding-block:86px 104px; }
+    .edu-grid { display:grid; grid-template-columns: .9fr 1.1fr; gap:90px; }
+    .education h2 { margin-top:0; }
+    .edu-item { display:grid; grid-template-columns: 1fr auto; gap:18px; padding:18px 0; border-bottom:1px solid #dfe5ee; }
+    .edu-item:first-child { border-top:1px solid #dfe5ee; }
+    .edu-item h3 { margin:0 0 5px; font-size:14px; font-weight:780; }
+    .edu-item p { margin:0; font-size:12px; color:#647187; }
+    .edu-date { color:#69778b; font-size:12px; white-space:nowrap; }
+
+    .contact { background:var(--lime); padding:75px 0; }
+    .contact-grid { display:flex; align-items:center; justify-content:space-between; gap:30px; }
+    .contact .section-kicker { color:#3d5d11; }
+    .contact h2 { max-width:750px; margin:0; font-size:clamp(35px,4vw,55px); letter-spacing:-.058em; line-height:1.13; }
+    .contact .button-primary { white-space:nowrap; }
+    .site-footer { padding:27px 0; background:var(--navy); color:#aebbd0; }
+    .footer-inner { display:flex; justify-content:space-between; align-items:center; gap:24px; flex-wrap:wrap; font-size:12px; }
+    .footer-inner strong { color:white; font-weight:730; }
+    .footer-inner a { color:#d5fa78; text-decoration:none; }
+    .footer-inner a:hover { text-decoration:underline; }
+
+    @media(max-width:1050px) {
+      .hero-grid { grid-template-columns:1fr 0.9fr; gap:35px; }
+      h1 { font-size:clamp(45px,6vw,65px); }
+      .impact-panel { padding: 28px; }
+      .case { padding:23px; }
+      .case h3 { font-size:21px; }
+      .experience-grid { grid-template-columns:245px 1fr; gap:45px; }
+      .role { grid-template-columns:105px 1fr; gap:12px; }
+      .edu-grid { gap:45px; }
+    }
+    @media(max-width:760px) {
+      .container { width:min(100% - 38px, 620px); }
+      .header-inner { min-height:70px; }
+      .header-nav { gap:16px; }
+      .header-nav a:not(.nav-contact) { display:none; }
+      .brand-text { font-size:14px; }
+      .hero { padding:68px 0 55px; }
+      .hero-grid,.about-grid,.experience-grid,.edu-grid { grid-template-columns:1fr; }
+      h1 { font-size:clamp(47px,10vw,67px); }
+      .intro { font-size:15px; }
+      .impact-panel { min-height:0; max-width:560px; }
+      .hero-bottom { flex-direction:column; align-items:flex-start; gap:18px; margin-top:40px; }
+      .stat-line { justify-content:flex-start; gap:28px; }
+      .section { padding-block:75px; }
+      .section h2 { font-size:clamp(35px,7vw,46px); }
+      .section-head { flex-direction:column; align-items:flex-start; gap:15px; }
+      .case-grid { grid-template-columns:1fr; }
+      .case { min-height:300px; }
+      .about { padding-block:75px; }
+      .about-grid { gap:20px; }
+      .experience-grid { gap:30px; }
+      .exp-lead { position:static; }
+      .role { grid-template-columns:110px 1fr; gap:12px; }
+      .skills-grid { grid-template-columns:1fr; }
+      .skill-card { padding:24px; }
+      .edu-grid { gap:25px; }
+      .contact-grid { flex-direction:column; align-items:flex-start; }
+      .contact { padding:60px 0; }
+    }
+    @media(max-width:400px) {
+      .container { width:calc(100% - 30px); }
+      .hero { padding-top:55px; }
+      h1 { font-size:45px; }
+      .header-nav .nav-contact { padding:8px 11px; font-size:11px; }
+      .role { grid-template-columns:1fr; gap:7px; }
+      .role-date { margin:0; }
+      .stat-line strong { font-size:21px; }
+    }
+    @media(prefers-reduced-motion:reduce) { html { scroll-behavior:auto; } *,*::before,*::after { transition:none!important; } }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="#top" aria-label="Yuliya Nikishina, back to top">
+        <span class="brand-symbol" aria-hidden="true">YN</span>
+        <span class="brand-text">Yuliya Nikishina</span>
+      </a>
+      <nav class="header-nav" aria-label="Main navigation">
+        <a href="#work">Selected work</a>
+        <a href="#about">About</a>
+        <a href="#experience">Experience</a>
+        <a href="#skills">Skills</a>
+        <a class="nav-contact" href="#contact">Get in touch <span aria-hidden="true" class="arrow">↗</span></a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero" id="top" aria-labelledby="hero-title">
+      <div class="container">
+        <div class="hero-grid">
+          <div>
+            <p class="eyebrow">Data analyst · Marketing & business intelligence</p>
+            <h1 id="hero-title">From complex data to <em>clear decisions</em></h1>
+            <p class="intro">Hi, I'm Yuliya. I use customer and transaction data to measure marketing impact, design reliable experiments, automate reporting and turn complex findings into practical business decisions.</p>
+            <div class="hero-actions">
+              <a class="button button-primary" href="#work">Explore my work <span class="arrow" aria-hidden="true">↗</span></a>
+              <a class="button button-outline" href="https://www.linkedin.com/in/yulia-nikishina-dataanalyst/" target="_blank" rel="noopener noreferrer">Connect on LinkedIn <span class="arrow" aria-hidden="true">↗</span></a>
+            </div>
+            <div class="hero-tags" aria-label="Specialties">
+              <span>Marketing &amp; CRM analytics</span><span>Experimentation</span><span>Forecasting</span><span>Automation &amp; BI</span>
+            </div>
+          </div>
+          <aside class="impact-panel" aria-label="Example of measurable reporting automation impact">
+            <p class="impact-label">Business impact · Reporting automation</p>
+            <h2>Less time preparing reports. More time analysing results.</h2>
+            <p class="impact-description">Automated a recurring marketing report with Python, database queries and data validation, leaving more room for interpretation and decisions.</p>
+            <div class="impact-comparison" aria-label="Approximate time spent preparing each recurring report before and after automation">
+              <div class="impact-metric">
+                <span class="metric-label">Before</span>
+                <strong>4–8 <small>hrs</small></strong>
+                <span class="metric-note">Manual preparation</span>
+              </div>
+              <span class="impact-arrow" aria-hidden="true">→</span>
+              <div class="impact-metric after">
+                <span class="metric-label">After</span>
+                <strong>1–1.5 <small>hrs</small></strong>
+                <span class="metric-note">Automated workflow</span>
+              </div>
+            </div>
+            <div class="impact-process" aria-label="Tools used"><span>SQL</span><b>→</b><span>Python</span><b>→</b><span>Excel reporting</span></div>
+            <p class="impact-footer">Approximate preparation time, depending on the reporting cycle.</p>
+          </aside>
+        </div>
+        <div class="hero-bottom">
+          <p>Background across <strong>retail, e-commerce and digital services</strong></p>
+          <div class="stat-line"><div><strong>5+</strong><span>years in analytics</span></div><div><span>Specialising in measurable business outcomes</span></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section selected" id="work" aria-labelledby="work-title">
+      <div class="container">
+        <p class="section-kicker">Project highlights</p>
+        <div class="section-head">
+          <h2 id="work-title">Selected work</h2>
+          <p class="section-description">Examples of analysis, automation and decision support delivered in commercial settings.</p>
+        </div>
+        <div class="case-grid">
+          <article class="case primary">
+            <p class="case-area">Sportmaster · Marketing effectiveness</p>
+            <h3>Measuring the incremental impact of promotions</h3>
+            <p>Evaluate nationwide promotions through treatment/control comparisons, customer-level metrics and seasonality checks, separating incremental effects from changes in topline sales.</p>
+            <div class="case-footer"><span>SQL</span><span>Experimentation</span><span>CRM analytics</span></div>
+          </article>
+          <article class="case">
+            <p class="case-area">Sportmaster · Analytics automation</p>
+            <h3>Turning manual reporting into a repeatable workflow</h3>
+            <p>Built a Python workflow to extract, validate and transform marketing data and produce Excel reporting, reducing repetitive manual preparation and improving consistency.</p>
+            <div class="case-footer"><span>Python</span><span>SQL</span><span>Data QA</span><span>Excel</span></div>
+          </article>
+          <article class="case">
+            <p class="case-area">InKitchen · BI &amp; customer insight</p>
+            <h3>Connecting customer behaviour to business planning</h3>
+            <p>Developed real-time KPI reporting, analysed customer segments using RFM, and created a break-even scenario model to support retention and operating decisions.</p>
+            <div class="case-footer"><span>Metabase</span><span>RFM</span><span>Scenario modelling</span></div>
+          </article>
+        </div>
+        <p class="confidential">Selected work is summarised at a high level to respect employer and client confidentiality.</p>
+      </div>
+    </section>
+
+    <section class="section about" id="about" aria-labelledby="about-title">
+      <div class="container about-grid">
+        <div>
+          <p class="section-kicker">My approach</p>
+          <h2 id="about-title">Analytical depth<br>Business perspective</h2>
+        </div>
+        <div>
+          <p class="about-large">I focus on <strong>measurable impact</strong>, reliable analysis and results that business teams can use.</p>
+          <p class="about-detail">My work spans CRM measurement, experimentation, forecasting, reporting automation and business intelligence. I start with a decision to be made, check data quality and assumptions, and choose methods that distinguish genuine effects from noise. I also bring experience partnering with business stakeholders and communicating results clearly.</p>
+          <p class="about-aside">What matters to me: clear questions, reliable data, honest interpretation and recommendations that someone can actually use.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section experience" id="experience" aria-labelledby="experience-title">
+      <div class="container experience-grid">
+        <div class="exp-lead">
+          <p class="section-kicker">Professional background</p>
+          <h2 id="experience-title">Experience</h2>
+          <p>Hands-on commercial analytics, automated reporting, stakeholder collaboration and earlier business leadership.</p>
+        </div>
+        <div class="timeline">
+          <article class="role">
+            <p class="role-date">2023 — Present</p>
+            <div><h3>Sportmaster</h3><p class="role-title">Data Analyst · Marketing & CRM Analytics</p><p class="role-description">Evaluate nationwide campaigns and CRM initiatives, measure incremental customer response, build forecasts and automate recurring reporting with SQL and Python to support commercial decisions.</p><span class="role-context">Remote</span></div>
+          </article>
+          <article class="role">
+            <p class="role-date">2022 — Present</p>
+            <div><h3>TripleTen</h3><p class="role-title">Data Analytics Project Reviewer & Mentor</p><p class="role-description">Review student analytics projects across SQL, Python and BI tools; mentor learners in analytical reasoning, visualisation, methodology and communicating recommendations.</p><span class="role-context">Remote · Part-time</span></div>
+          </article>
+          <article class="role">
+            <p class="role-date">2023</p>
+            <div><h3>InKitchen</h3><p class="role-title">Data Analyst · Customer & BI Analytics</p><p class="role-description">Created real-time Metabase KPI reporting, used RFM segmentation to inform customer strategy, and developed a financial break-even scenario model.</p><span class="role-context">Remote</span></div>
+          </article>
+          <article class="role">
+            <p class="role-date">2021 — 2022</p>
+            <div><h3>Sellematics</h3><p class="role-title">Data Analyst · E-commerce & Marketplace Analytics</p><p class="role-description">Analysed marketplace sales, demand, competition and conversion, building KPI dashboards and translating findings into growth recommendations for clients.</p><span class="role-context">Remote</span></div>
+          </article>
+          <article class="role">
+            <p class="role-date">2010 — 2022</p>
+            <div><h3>Sakhalin Energy</h3><p class="role-title">Head of Catering & Leisure Section · Facilities Management</p><p class="role-description">Led a small team and managed outsourced services across multiple locations. Built vendor KPIs and evaluation frameworks, assessed proposals and presented recommendations to the Tender Committee.</p><span class="role-context">Yuzhno-Sakhalinsk · Earlier leadership experience</span></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section skills" id="skills" aria-labelledby="skills-title">
+      <div class="container">
+        <p class="section-kicker light">Expertise</p>
+        <div class="section-head"><h2 id="skills-title">Skills &amp; tools</h2><p class="section-description">Methods and tools I use to measure impact, build dependable workflows and support decisions.</p></div>
+        <div class="skills-grid">
+          <article class="skill-card"><h3>Analytical methods</h3><div class="skill-tags"><span>Marketing analytics</span><span>Customer behaviour</span><span>A/B testing</span><span>Incrementality</span><span>Forecasting</span><span>KPI design</span></div></article>
+          <article class="skill-card"><h3>Tools & platforms</h3><div class="skill-tags"><span>SQL</span><span>Oracle</span><span>PostgreSQL</span><span>Python</span><span>pandas</span><span>Excel</span><span>Power BI</span><span>Tableau</span><span>Metabase</span><span>DataLens</span><span>Power Query</span><span>Data validation</span><span>Reporting automation</span></div></article>
+          <article class="skill-card"><h3>Turning analysis into action</h3><div class="skill-tags"><span>Executive reporting</span><span>Stakeholder management</span><span>Data storytelling</span><span>Requirements translation</span><span>Scenario analysis</span><span>Vendor analytics</span></div></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section education" id="education" aria-labelledby="education-title">
+      <div class="container edu-grid">
+        <div><p class="section-kicker">Learning &amp; education</p><h2 id="education-title">Education</h2></div>
+        <div>
+          <div class="edu-item"><div><h3>Yandex Practicum</h3><p>Data Analytics</p></div><span class="edu-date">2020–2021</span></div>
+          <div class="edu-item"><div><h3>The Open University</h3><p>Business Administration and Management</p></div><span class="edu-date">2007–2008</span></div>
+          <div class="edu-item"><div><h3>Yuzhno Sakhalinsk Institute of Economics, Law and Informatics</h3><p>Specialist Degree · Applied Linguistics (English and Japanese)</p></div><span class="edu-date">2001–2009</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact" id="contact" aria-labelledby="contact-title">
+      <div class="container contact-grid">
+        <div><p class="section-kicker">Let's connect</p><h2 id="contact-title">Have a data question worth solving?</h2></div>
+        <a class="button button-primary" href="https://www.linkedin.com/in/yulia-nikishina-dataanalyst/" target="_blank" rel="noopener noreferrer">Find me on LinkedIn <span class="arrow" aria-hidden="true">↗</span></a>
+      </div>
+    </section>
+  </main>
+  <footer class="site-footer"><div class="container footer-inner"><span><strong>Yuliya Nikishina</strong> · Data Analyst</span><span>Built with HTML & CSS · <a href="#top">Back to top ↑</a></span></div></footer>
+</body>
+</html>
